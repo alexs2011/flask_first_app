@@ -7,6 +7,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def main_page() -> str:
+    """
+    Главная страница со списком всех кандидатов. Предоставляет информацию об имени, позиции и навыках.
+    """
     return render_template("main_page.html", candidates=candidates)
 
 
