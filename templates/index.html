@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main Page</title>
-</head>
-<body>
-<ol>
-    {% for candidate in candidates %}
-    <li>
-    <pre>
-Имя: {{ candidate.name }}
-Должность: {{ candidate.position }}
-Навыки: {{ candidate.skills }}
-    </pre>
-    </li>
-    {% endfor %}
-</ol>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="width: 50%; margin: 30px">
+        <h2>{% block title %} List of candidates {% endblock %}</h2>
+    </div>
+
+    <div style="width: 50%; margin: 30px">
+        {% for candidate in candidates %}
+        {% if loop.index % 2 == 0 %}
+            {% set bg_color = '#e6f9ff' %}
+        {% else %}
+            {% set bg_color = '#eee' %}
+        {% endif %}
+
+        <div style="padding: 10px; background-color: {{ bg_color }}; margin: 20px">
+            <p>№ {{ loop.index }}</p>
+            <p style="font-size: 18px">Имя: {{ candidate.name }}</p>
+            <p style="font-size: 18px">Должность: {{ candidate.position }}</p>
+            <p style="font-size: 18px">Навыки: {{ candidate.skills }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
