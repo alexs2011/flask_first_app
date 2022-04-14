@@ -4,4 +4,5 @@ import utility.utils as utils
 
 app = Flask(__name__)
 
-candidates = utils.load_data(r"./data/candidates.json")
+filename = r"./data/candidates.json"
+candidates = utils.load_data(filename)
