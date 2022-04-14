@@ -1,6 +1,6 @@
 from flask import Flask
 
-import utils
+import utility.utils as utils
 
 app = Flask(__name__)
 
