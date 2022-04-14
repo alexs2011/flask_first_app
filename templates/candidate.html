@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="width: 50%; margin: 30px">
+        <h2>{% block title %} Candidate Profile {% endblock %}</h2>
+    </div>
+
+    <div style="width: 50%; margin: 30px">
+        <div style="padding: 10px; margin: 20px">
+            <img src="{{ candidate.picture }}">
+        </div>
+
+        <div style="padding: 10px; background-color: #e6f9ff; margin: 20px">
+            <p style="font-size: 18px">Имя: {{ candidate.name }}</p>
+            <p style="font-size: 18px">Позиция: {{ candidate.position }}</p>
+            <p style="font-size: 18px">Навыки: {{ candidate.skills }}</p>
+        </div>
+    </div>
+{% endblock %}

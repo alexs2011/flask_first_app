@@ -13,4 +13,4 @@ def find_candidate_by_uid(candidates: list[dict], uid: int) -> dict:
     for candidate in candidates:
         if candidate.get("id") == uid:
             return candidate
-    raise ValueError(f"Кандидат с uid={uid} не найден.")
+    raise ValueError(f"ValueError: Кандидат с uid={uid} не найден.")

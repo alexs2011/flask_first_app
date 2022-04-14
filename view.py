@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, abort
 
 from app import app, candidates
 from utility.utils import find_candidate_by_uid
@@ -13,9 +13,13 @@ def index() -> str:
 
 
 @app.route('/candidates/<int:uid>')
-def get_candidate_by_uid(uid: int) -> str:
+def candidate_profile(uid: int) -> str:
     """
     Страница профиля кандидата.
     """
-    candidate = find_candidate_by_uid(candidates, uid)
+    try:
+        candidate = find_candidate_by_uid(candidates, uid)
+    except ValueError as e:
+        print(e)
+        abort(404)
     return render_template("candidate.html", candidate=candidate)
