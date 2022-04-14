@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    <div style="width: 50%; margin: 30px">
-        <h2>{% block title %} List of candidates {% endblock %}</h2>
-    </div>
+{% block title %} List of candidates {% endblock %}
 
+{% block content_title %} List of candidates {% endblock %}
+
+{% block content %}
     <div style="width: 50%; margin: 30px">
         {% for candidate in candidates %}
         {% if loop.index % 2 == 0 %}

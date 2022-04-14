@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    <div style="width: 50%; margin: 30px">
-        <h2>{% block title %} List of candidates with skill: {{ skill }} {% endblock %}</h2>
-    </div>
+{% block title %} Search results {% endblock %}
 
+{% block content_title %} List of candidates with skill: {{ skill }} {% endblock %}
+
+{% block content %}
     {# Если кандидаты не были найдены. #}
     <div style="width: 50%; margin: 30px">
         {% if candidates|length == 0 %}
