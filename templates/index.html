@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %} List of candidates {% endblock %}
+{% block title %} List of candidates {% endblock -%}
 
-{% block content_title %} List of candidates {% endblock %}
+{% block content_title %} List of candidates {% endblock -%}
 
-{% block content %}
+{% block content -%}
     <div style="width: 50%; margin: 30px">
-        {% for candidate in candidates %}
-        {% if loop.index % 2 == 0 %}
-            {% set bg_color = '#e6f9ff' %}
-        {% else %}
-            {% set bg_color = '#eee' %}
-        {% endif %}
+        {% for candidate in candidates -%}
+        {% if loop.index % 2 == 0 -%}
+            {% set bg_color = '#e6f9ff' -%}
+        {% else -%}
+            {% set bg_color = '#eee' -%}
+        {% endif -%}
 
         <div style="padding: 10px; background-color: {{ bg_color }}; margin: 20px">
             <p>№ {{ loop.index }}</p>
@@ -19,6 +19,6 @@
             <p style="font-size: 18px">Позиция: {{ candidate.position }}</p>
             <p style="font-size: 18px">Навыки: {{ candidate.skills }}</p>
         </div>
-        {% endfor %}
+        {% endfor -%}
     </div>
-{% endblock %}
+{% endblock -%}

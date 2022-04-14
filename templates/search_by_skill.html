@@ -1,26 +1,26 @@
 {% extends 'base.html' %}
 
-{% block title %} Search results {% endblock %}
+{% block title %} Search results {% endblock -%}
 
-{% block content_title %} List of candidates with skill: {{ skill }} {% endblock %}
+{% block content_title %} List of candidates with skill: {{ skill }} {% endblock -%}
 
-{% block content %}
+{% block content -%}
     {# Если кандидаты не были найдены. #}
     <div style="width: 50%; margin: 30px">
-        {% if candidates|length == 0 %}
+        {% if candidates|length == 0 -%}
             <div style="padding: 10px; background-color: #eee; margin: 20px">
                 <p style="font-size: 18px">Кандидаты с данным навыком не найдены.</p>
             </div>
-        {% endif %}
+        {% endif -%}
     </div>
 
     <div style="width: 50%; margin: 30px">
-        {% for candidate in candidates %}
-        {% if loop.index % 2 == 0 %}
-            {% set bg_color = '#e6f9ff' %}
-        {% else %}
-            {% set bg_color = '#eee' %}
-        {% endif %}
+        {% for candidate in candidates -%}
+        {% if loop.index % 2 == 0 -%}
+            {% set bg_color = '#e6f9ff' -%}
+        {% else -%}
+            {% set bg_color = '#eee' -%}
+        {% endif -%}
 
         <div style="padding: 10px; background-color: {{ bg_color }}; margin: 20px">
             <p>№ {{ loop.index }}</p>
@@ -28,6 +28,6 @@
             <p style="font-size: 18px">Позиция: {{ candidate.position }}</p>
             <p style="font-size: 18px">Навыки: {{ candidate.skills }}</p>
         </div>
-        {% endfor %}
+        {% endfor -%}
     </div>
-{% endblock %}
+{% endblock -%}
